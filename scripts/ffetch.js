@@ -10,8 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-/* eslint-disable no-restricted-syntax,  no-await-in-loop */
-
 async function* request(url, context) {
   const {
     chunkSize, sheetName, fetch, fallbackUrl,
@@ -135,7 +133,6 @@ async function all(upstream) {
 }
 
 async function first(upstream) {
-  /* eslint-disable-next-line no-unreachable-loop */
   for await (const entry of upstream) {
     return entry;
   }

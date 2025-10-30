@@ -11,7 +11,7 @@ export default async function decorate(block) {
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
   const fragment = await loadFragment(footerPath);
  
-  console.log(block);
+  // console.log(block);
  
   block.textContent='';
   const footerDivContainer=document.createElement('div');
@@ -22,10 +22,10 @@ export default async function decorate(block) {
   footerDivSpace.classList.add('blank-space');
   const footerClasses=['footer-nav', 'footer-text'];
   let index=0;
-  while(fragment.firstElementChild){
+  while(fragment.firstElementChild) {
     fragment.firstElementChild.classList.add(footerClasses[index]);
     footerDivContainer.append(fragment.firstElementChild);
-    if(index==0){
+    if(index==0) {
       footerDivContainer.append(footerDivSpace);
     }
     index+=1;
